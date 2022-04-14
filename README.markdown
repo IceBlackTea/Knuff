@@ -5,6 +5,24 @@ The debug application for Apple Push Notification Service (APNs).
 
 ![knuff-preview](https://cloud.githubusercontent.com/assets/499192/12481271/36b610e0-c048-11e5-9be6-ee9e996036a2.png)
 
+## How to build
+
+```
+git clone git@github.com:IceBlackTea/Knuff.git
+cd Knuff
+git submodule update
+```
+
+Try to fix _font not found error, add `NSFont *_font;` in `MGSFontWell`
+
+```objc
+ @implementation MGSFontWell {
+     NSFont *baseFont;
+     BOOL wasActivatedOnce;
++    NSFont *_font;
+ }
+```
+
 ## Features
 * Send push notifications to APNS (Apple Push Notification Service) very easily (no configuration needed at all)
 * Load / Save documents including token and JSON payload
